@@ -26,3 +26,13 @@ $a /= $b; // équivaut à $a = $a / $b;
 echo "Après division, \$a = $a<br>";
 $a %= $b; // équivaut à $a = $a % $b;
 echo "Après modulo, \$a = $a<br>";
+
+// 4. Opérateurs d'incrémentation
+
+$a = 5;
+echo "Post-incrément (\$a++): " . $a++ . '<br>'; // Affiche 5, puis $a devient 6
+echo "Pré-incrément (++\$a): " . ++$a . '<br>';  // Incrémente à 7 puis affiche 7
+// 5. Opérateurs de décrémentation
+
+echo "Post-décrément (\$a--): " . $a-- . '<br>'; // Affiche 7, puis $a devient 6
+echo "Pré-décrément (--\$a): " . --$a . '<br>';  // Décrémente à 5 puis affiche 5
