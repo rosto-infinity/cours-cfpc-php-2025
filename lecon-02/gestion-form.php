@@ -12,7 +12,7 @@ if (isset($_POST['create'])) {
     echo "Nom: $nom_student <br>";
   } 
   echo "Prénom:  $prenom_student<br>";
-  // echo "Email:   $mail_studen <br>";
+ echo "Email:   $mail_studen <br>";
 }
 
 ?>
