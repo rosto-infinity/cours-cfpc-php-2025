@@ -2,7 +2,7 @@
 if (isset($_POST['create'])) {
   //echo "Formulaire soumis";
   
-  // $prenom_student = $_POST['prenom'];
+ // $prenom_student = $_POST['prenom'];
   // $mail_student = $_POST['mail'];
   if (empty($_POST['nom'])) {
     echo "Le nom est obligatoire <br>";
@@ -13,6 +13,7 @@ if (isset($_POST['create'])) {
   } 
   echo "Prénom:  $prenom_student<br>";
  echo "Email:   $mail_studen <br>";
+ 
 }
 
 ?>
@@ -39,6 +40,7 @@ if (isset($_POST['create'])) {
       <input type="email" name="mail" placeholder="Email"
         class="w-full border border-green-300 p-2 rounded focus:outline-none focus:border-green-500">
     </div>
+    <!-- texte centre -->
     <div class="text-center">
       <input type="submit" name="create" value="Créer"
         class="inline-block px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">
