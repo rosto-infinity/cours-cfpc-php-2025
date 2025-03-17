@@ -1,15 +1,14 @@
 <?php
+ session_start();
+
 if (isset($_POST['create'])) {
-  //echo "Formulaire soumis";
+  $nom_student = htmlspecialchars($_POST["nom"]);
+  $prenom_student = htmlspecialchars($_POST["prenom"]);
 
-
-  //  // $prenom_student = $_POST['prenom'];
-//   // $mail_student = $_POST['mail'];
+  
   if (empty($_POST['nom'])) {
     echo "Le nom est obligatoire <br>";
   } else {
-    $nom_student = htmlspecialchars($_POST['nom']) ;
-
       echo "Nom: $nom_student <br>";
   } 
   if (empty($_POST['password'])) {
@@ -20,23 +19,6 @@ if (isset($_POST['create'])) {
     
       echo "password: $motDePasseHash <br>";
   } 
-//   if (empty($_POST['prenom'])) {
-//     echo "Le prenom est obligatoire <br>";
-//   } else {
-//     $prenom = $_POST['prenom'];
-
-  //     echo "Nom: $prenom <br>";
-//   } 
-
-  //   echo "Prénom:  $prenom_student<br>";
-//  echo "Email:   $mail_student <br>";
-
-  // $mail_student  = $_POST['mail'];
-  // if (!filter_var($mail_student, FILTER_VALIDATE_EMAIL)) {
-  //   echo "veuiller saisir un mail valide";
-  // }else{
-  //   echo "Email:   $mail_student <br>";
-  // }
 
 }
 
@@ -51,14 +33,14 @@ if (isset($_POST['create'])) {
 </head>
 
 <body>
-  <form action="" method="post" class="bg-white p-6 rounded shadow max-w-md mx-auto">
+  <form action="gestion-form.php" method="post" class="bg-white p-6 rounded shadow max-w-md mx-auto">
     <div class="mb-4">
-      <input type="text" name="nom" placeholder="Nom"
+      <input type="text" name="nom" placeholder="Nom" value="<?= $nom_student ?? "" ?>"
         class="w-full border border-green-300 p-2 rounded focus:outline-none focus:border-green-500">
     </div>
     <div class="mb-4">
-      <input type="text" name="prenom" placeholder="Prénom"
-        class="w-full border border-green-300 p-2 rounded focus:outline-none focus:border-green-500">
+      <input type="text" name="prenom" value="<?= $prenom_student ?? "" ?>" placeholder="Prénom" class="" w-full border
+        border-green-300 p-2 rounded focus:outline-none focus:border-green-500">
     </div>
     <div class="mb-4">
       <input type="text" name="mail" placeholder="Email"
