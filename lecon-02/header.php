@@ -7,7 +7,7 @@
 
 <head>
   <title>Mon site web</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="src/output.css">
 </head>
 
 <body class="bg-gray-100 font-sans">
