@@ -6,7 +6,7 @@ $username ="root";
 $password="";
 
 try {
-  $connect= new PDO($dsn,$username, $password);
+  $pdo= new PDO($dsn,$username, $password);
   echo "Succès : Connexion à la base de données avec succès !";
 } catch (Exception $e) {
   echo "Erreur : " . $e->getMessage();
