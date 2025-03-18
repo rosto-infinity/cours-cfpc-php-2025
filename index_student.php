@@ -7,7 +7,9 @@ $result=$connect->query($sql);
 echo "<pre>";
 var_dump($result);
 echo "</pre>";
-if($result->num_rows >0)
+
+
+if($result->rowCount()>0)
 {
 foreach($result as $row)
 {
