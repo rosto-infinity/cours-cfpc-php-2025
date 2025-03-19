@@ -18,7 +18,7 @@ require_once "database.php";
     <!-- Formulaire de recherche -->
     <form method="GET" action="" class="mb-4">
 
-      <a class=" my-5 px-4 py-2 mr-5 bg-green-600 text-white rounded hover:bg-green-700" href="create.php">Créer un
+      <a class=" my-5 px-4 py-2 mr-5 bg-green-600 text-white rounded hover:bg-green-700" href="create.html">Créer un
         nouvel étudiant</a>
 
       <a class=" my-5 px-4 py-2 mr-5 bg-green-600 text-white rounded hover:bg-green-700"
