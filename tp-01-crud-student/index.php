@@ -1,7 +1,7 @@
 <?php
 require_once "database.php";
 
-// Requête SQL pour récupérer tous les étudiants
+// Requête SQL pour récupérer tous les students
 $sql = "SELECT * FROM students";
 
 //prepare la requête
