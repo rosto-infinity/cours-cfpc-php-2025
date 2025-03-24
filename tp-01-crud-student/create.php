@@ -1,3 +1,27 @@
+<?php 
+require_once "database.php";
+$message = "";
+
+if(isset($_POST['create'])){
+  $nom = $_POST['nom'];
+  $prenom = $_POST['prenom'];
+  $mail = $_POST['mail'];
+
+  if(empty($nom) || empty($prenom) || empty($mail)){
+    $message = ' <span style="background:red; padding:10px; color:white; margin:15px;"> Veillez remplir les champs </span>';
+   
+  }else{
+    
+    $sql = "INSERT INTO students(nom, prenom, mail) VALUES(:nom, :prenom, :mail)";
+    $request = $pdo->prepare($sql);
+    $request->execute(compact('nom', 'prenom', 'mail'));
+
+    $message = "Etudiant créé avec succès";
+  }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,16 +35,15 @@
 
 <body class="bg-green-100">
   <div class="container mx-auto p-4  text-center">
-    <h1 class="text-3xl font-bold text-green-900 text-center mb-4">Créer un nouveau Etudiant</h1>
-
-
+    <h1 class="text-3xl font-bold text-green-900 text-center mb-4">Créer un nouveau Etudiant</h1>         
+                    <?= $message ?>           
     <form action="" method="post" class="bg-white p-6 rounded shadow max-w-md mx-auto">
       <div class="mb-4">
-        <input type="text" name="nom" placeholder="Nom"
+        <input type="text" name="prenom" placeholder="Prénom"
           class="w-full border border-green-300 p-2 rounded focus:outline-none focus:border-green-500">
       </div>
       <div class="mb-4">
-        <input type="text" name="prenom" placeholder="Prénom"
+        <input type="text" name="nom" placeholder="Nom"
           class="w-full border border-green-300 p-2 rounded focus:outline-none focus:border-green-500">
       </div>
       <div class="mb-4">

@@ -8,7 +8,7 @@ $password="";
 try {
   $pdo= new PDO($dsn,$username, $password);
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  echo "Succès : Connexion à la base de données avec succès !";
+  // echo "Succès : Connexion à la base de données avec succès !";
 } catch (Exception $e) {
   echo "Erreur : " . $e->getMessage();
 }

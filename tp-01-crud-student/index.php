@@ -12,6 +12,14 @@ $req_select->execute();
 
 //récupère les données
 $donnees = $req_select->fetchAll();
+
+//Verifie s'il ya des donnees 
+
+if(count($donnees) >0){
+  echo "Nombre d'étudiants : ".count($donnees);
+}else{
+  echo "Aucun étudiant trouvé";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
