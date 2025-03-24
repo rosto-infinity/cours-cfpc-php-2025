@@ -1,22 +1,35 @@
 <?php 
 require_once "database.php";
 $message = "";
+function clean_input($data){
+  return htmlspecialchars(stripslashes(trim($data)));
+}
+
 
 if(isset($_POST['create'])){
-  $nom = $_POST['nom'];
-  $prenom = $_POST['prenom'];
-  $mail = $_POST['mail'];
+  $nom = clean_input($_POST['nom']);
+  $prenom =clean_input($_POST['prenom']);
+  $mail = clean_input($_POST['mail']);
 
   if(empty($nom) || empty($prenom) || empty($mail)){
     $message = ' <span style="background:red; padding:10px; color:white; margin:15px;"> Veillez remplir les champs </span>';
    
   }else{
     
+    $sql_mail = "SELECT * FROM students WHERE mail = :mail";
+    $request_mail = $pdo->prepare($sql_mail);
+    $request_mail->execute(compact('mail'));
+    $mail_exist = $request_mail->fetch();
+
+    if($mail_exist){
+      $message = ' <span style="background:red; padding:10px; color:white; margin:15px;"> Email existe déjà </span>';
+    }else{
     $sql = "INSERT INTO students(nom, prenom, mail) VALUES(:nom, :prenom, :mail)";
     $request = $pdo->prepare($sql);
     $request->execute(compact('nom', 'prenom', 'mail'));
 
     $message = "Etudiant créé avec succès";
+  }
   }
 }
 
