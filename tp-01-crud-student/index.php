@@ -73,7 +73,10 @@ if(count($donnees) >0){
             <?php echo  $donnee['mail']; ?>
           </td>
           <td class="px-6 py-4 whitespace-nowrap text-sm">
-            <a class="text-green-600 hover:text-green-900 font-medium mr-4" href="">Modifier</a>
+            <a class="text-green-600 hover:text-green-900 font-medium mr-4" 
+            
+            href="update.php?id=<?= $donnee['id']; ?>">Modifier</a>
+            
             <a class="text-red-600 hover:text-red-900 font-medium" href=""
               onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet étudiant ?');">Supprimer</a>
           </td>
