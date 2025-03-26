@@ -76,8 +76,9 @@ if(count($donnees) >0){
             <a class="text-green-600 hover:text-green-900 font-medium mr-4" 
             
             href="update.php?id=<?= $donnee['id']; ?>">Modifier</a>
-            
-            <a class="text-red-600 hover:text-red-900 font-medium" href=""
+
+            <a class="text-red-600 hover:text-red-900 font-medium" 
+            href="delete?id=<?= $donnee['id']; ?>"
               onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet étudiant ?');">Supprimer</a>
           </td>
         </tr>
