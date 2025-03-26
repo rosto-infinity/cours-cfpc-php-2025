@@ -1,12 +1,24 @@
 <?php
 require_once "database.php";
+  
+  // $sql1 = "SELECT * FROM students WHERE nom LIKE :search OR prenom LIKE :search  OR mail LIKE :search ";
+  
+  // $sql1 = $sql. "WHERE nom LIKE :search OR prenom LIKE :search  OR mail LIKE :search ";
+  
+  // $sql .= "WHERE nom LIKE :search OR prenom LIKE :search  OR mail LIKE :search ";
+  //prepare la requête
+// initialisation de la variable de recherche
 
+$search = isset($_GET['search']) ? $_GET['search'] : '';
+
+// requête SQL avec filtre de recherche
 // Requête SQL pour récupérer tous les students
 $sql = "SELECT * FROM students";
-
-//prepare la requête
-$req_select = $pdo->prepare($sql);
-
+if(!empty($search)){
+  $sql .= " WHERE nom LIKE '%$search%' OR prenom LIKE '%$search%' OR mail LIKE '%$search%' ";
+}
+  $req_select = $pdo->prepare($sql);
+  
 //execute la requête
 $req_select->execute();
 
@@ -20,6 +32,8 @@ if(count($donnees) >0){
 }else{
   echo "Aucun étudiant trouvé";
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,12 +87,10 @@ if(count($donnees) >0){
             <?php echo  $donnee['mail']; ?>
           </td>
           <td class="px-6 py-4 whitespace-nowrap text-sm">
-            <a class="text-green-600 hover:text-green-900 font-medium mr-4" 
-            
-            href="update.php?id=<?= $donnee['id']; ?>">Modifier</a>
+            <a class="text-green-600 hover:text-green-900 font-medium mr-4"
+              href="update.php?id=<?= $donnee['id']; ?>">Modifier</a>
 
-            <a class="text-red-600 hover:text-red-900 font-medium" 
-            href="delete?id=<?= $donnee['id']; ?>"
+            <a class="text-red-600 hover:text-red-900 font-medium" href="delete?id=<?= $donnee['id']; ?>"
               onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet étudiant ?');">Supprimer</a>
           </td>
         </tr>
