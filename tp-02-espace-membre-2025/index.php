@@ -49,7 +49,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     }
 
     // vérification du mot de passe
-    if(strlen($mdp<8) && !preg_match("#[0-9]+#", $mdp) && !preg_match("#[a-zA-Z]+#", $mdp) ){
+    if(strlen($mdp<8) || !preg_match("#[0-9]+#", $mdp) || !preg_match("#[a-zA-Z]+#", $mdp) ){
       return "Le mot de passe doit contenir au moins 8 caractères, une lettre et un chiffre";
     }
 
@@ -63,7 +63,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $sql = "INSERT INTO membres (pseudo, mail, mdp) VALUES (:pseudo, :mail, :mdp)";
     $req = $pdo->prepare($sql);
     $req->execute(compact('pseudo', 'mail', 'mdp'));
-    return "Votre compte a bien été créé ! <a href=\"connexion.php\">Me connecter</a>"; // Inscription réuss
+    return "Votre compte a bien été créé ! <a style='color:white;' href=\"connexion.php\">Me connecter</a>"; // Inscription réuss
 
   }
   $error = register($pseudo, $mail, $mail2, $mdp ,$mdp2);
@@ -78,6 +78,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link href="src/output.css" rel="stylesheet">
 </head>
 
 <body>
