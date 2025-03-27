@@ -29,8 +29,42 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if($pseudoExist){
       return "Le pseudo est déjà utilisé";
     }
+    
+    // vérification du mail
+    if($mail != $mail2){
+      return "Les mails ne correspondent pas";
+    }
+   
+    if(!filter_var($mail, FILTER_VALIDATE_EMAIL)){
+      return "Le mail n'est pas valide";
+    }
 
     
+    $sql = "SELECT * FROM membres WHERE mail = :mail";
+    $reqMail = $pdo->prepare($sql);
+    $reqMail->execute(compact('mail'));
+    $mailExist = $reqMail->fetch();
+    if($mailExist){
+      return "Le mail est déjà utilisé";
+    }
+
+    // vérification du mot de passe
+    if(strlen($mdp<8) && !preg_match("#[0-9]+#", $mdp) && !preg_match("#[a-zA-Z]+#", $mdp) ){
+      return "Le mot de passe doit contenir au moins 8 caractères, une lettre et un chiffre";
+    }
+
+    if($mdp != $mdp2){
+      return "Les mots de passe ne correspondent pas";
+     }
+
+    // cryptage du mot de passe
+    $mdp = password_hash($mdp, PASSWORD_DEFAULT);
+    // insertion des données dans la base de données
+    $sql = "INSERT INTO membres (pseudo, mail, mdp) VALUES (:pseudo, :mail, :mdp)";
+    $req = $pdo->prepare($sql);
+    $req->execute(compact('pseudo', 'mail', 'mdp'));
+    return "Votre compte a bien été créé ! <a href=\"connexion.php\">Me connecter</a>"; // Inscription réuss
+
   }
   $error = register($pseudo, $mail, $mail2, $mdp ,$mdp2);
 }
@@ -56,6 +90,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
       if(isset($error)){
         echo "<p style='background:red; width:300px; color:white; padding:12px;'>".$error."</p>";
       }
+      
+      
       ?>
 
       <table>
@@ -64,16 +100,19 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             <label for="pseudo">Pseudo :</label>
           </td>
           <td>
-            <input type="text" placeholder="Votre pseudo" id="pseudo" name="pseudo" />
+            <input type="text" placeholder="Votre pseudo" id="pseudo" name="pseudo" value="<?= $pseudo  ?? ''?>" /
+              autocomplete="off">
+
 
           </td>
         </tr>
         <tr>
-          <td align="right">
+          <td align=" right">
             <label for="mail">Mail :</label>
           </td>
           <td>
-            <input type="text" placeholder="Votre mail" id="mail" name="mail" />
+            <input type="text" placeholder="Votre mail" value="<?= $mail  ?? ''?>" id="mail" name="mail"
+              autocomplete="off" />
           </td>
         </tr>
         <tr>
@@ -81,7 +120,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             <label for="mail2">Confirmation du mail :</label>
           </td>
           <td>
-            <input type="text" placeholder="Confirmez votre mail" id="mail2" name="mail2" />
+            <input type="text" value="<?= $mail  ?? ''?>" placeholder="Confirmez votre mail" id="mail2" name="mail2"
+              autocomplete="off" />
           </td>
         </tr>
         <tr>
