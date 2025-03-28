@@ -1,4 +1,5 @@
-<?php
+<?php 
+
 require_once 'database.php';
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
@@ -87,6 +88,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 <body>
   <div align="center">
     <h2>Inscription prof</h2>
+   
     <br /><br />
     <form method="POST" action="">
 
@@ -115,7 +117,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             <label for="mail">Mail :</label>
           </td>
           <td>
-            <input type="text" placeholder="Votre mail" value="<?= $mail  ?? ''?>" id="mail" name="mail"
+            <input type="mail" placeholder="Votre mail" value="<?= $mail  ?? ''?>" id="mail" name="mail"
               autocomplete="off" />
           </td>
         </tr>
@@ -124,8 +126,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             <label for="mail2">Confirmation du mail :</label>
           </td>
           <td>
-            <input type="text" value="<?= $mail  ?? ''?>" placeholder="Confirmez votre mail" id="mail2" name="mail2"
+
+            <input type="mail" value="<?= $mail  ?? ''?>" placeholder="Confirmez votre mail" id="mail2" name="mail2"
               autocomplete="off" />
+
           </td>
         </tr>
         <tr>

@@ -1,6 +1,6 @@
 <?php
+session_start();
 require_once 'database.php';
-
 
 function handlePostRequest($pdo)
 {
@@ -14,6 +14,7 @@ function handlePostRequest($pdo)
   if (empty($mailconnect) || empty($mdpconnect)) {
     return "Tous les champs doivent être remplis";
   }
+  
 
   return authenticateUser($pdo, $mailconnect, $mdpconnect);
 }
@@ -69,7 +70,7 @@ $erreur = handlePostRequest($pdo);
     ?>
     <form method="POST" action="" class="bg-white p-6 rounded shadow max-w-lg mx-auto">
       <label for="mailconnect" class="">Mail :</label>
-      <input type=" mail" placeholder=" mailconnect" id="mailconnect" name="mailconnect" autocomplete="$off"
+      <input type="mail" placeholder=" mailconnect" id="mailconnect" name="mailconnect" autocomplete="$off"
         value="<?= $mailconnect ?? '' ?>"
         class="w-full border border-green-300 p-2 rounded focus:outline-none focus:border-green-500" />
       <label for="mdpconnect" class="">Mot de passe :</label>

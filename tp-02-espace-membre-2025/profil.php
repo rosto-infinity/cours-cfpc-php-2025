@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 require_once "database.php";
 // if(isset($_GET['id'] ) AND $_GET['id']>0){
@@ -41,6 +40,7 @@ if(isset($_GET['id'] )){
     <br />
     <a href="editionprofil.php">Editer mon profil</a>
     <a href="deconnexion.php">Se déconnecter</a>
+    p
 
     <?php
     }else{
