@@ -1,13 +1,13 @@
 <?php
 require_once 'database.php';
 
+
 function handlePostRequest($pdo)
 {
   //Verification du type de requete
   if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     return;
   }
-
   //réception des données du formulaire
   $mailconnect = htmlspecialchars($_POST['mailconnect']);
   $mdpconnect = $_POST['mdpconnect'];
@@ -24,13 +24,27 @@ function authenticateUser($pdo, $mailconnect, $mdpconnect)
   $sql = "SELECT * FROM membres WHERE mail = :mailconnect";
   $reqMail = $pdo->prepare($sql);
   $reqMail->execute(compact('mailconnect'));
-  $mailExist = $reqMail->fetch();
-  var_dump($mailExist);
+  $mailExist = $reqMail->rowCount();
   if (!$mailExist) {
     return "Le mail n'existe pas";
   }
+  $userinfo = $reqMail->fetch();
+  // echo "<pre>";
+  // print_r($userinfo['mdp']);
+  // echo "</pre>";
+  // die();
+  if (!password_verify($mdpconnect, $userinfo['mdp'])) {
+    return 'Mauvais mot de passe';
+  }
 
-
+   //Définition des variables de session
+   $_SESSION['id'] = $userinfo['id'];
+   $_SESSION['pseudo'] = $userinfo['pseudo'];
+   $_SESSION['mail'] = $userinfo['mail'];
+ 
+   //Redirection vers la page dedition
+   header("Location: profil.php?id=" . $_SESSION['id']);
+   exit();
 }
 $erreur = handlePostRequest($pdo);
 ?>
@@ -50,12 +64,13 @@ $erreur = handlePostRequest($pdo);
     <br /><br />
     <?php
     if (isset($erreur)) {
-      echo "<p style='background:red; width:300px; color:white; padding:12px;'>".$erreur."</p>";
+      echo "<p style='background:red; width:300px; color:white; padding:12px;'>" . $erreur . "</p>";
     }
     ?>
     <form method="POST" action="" class="bg-white p-6 rounded shadow max-w-lg mx-auto">
-      <label for="mailconnect class="">Mail :</label>
-      <input type=" mail" placeholder="mailconnect" id="mailconnect" name="mailconnect"
+      <label for="mailconnect" class="">Mail :</label>
+      <input type=" mail" placeholder=" mailconnect" id="mailconnect" name="mailconnect" autocomplete="$off"
+        value="<?= $mailconnect ?? '' ?>"
         class="w-full border border-green-300 p-2 rounded focus:outline-none focus:border-green-500" />
       <label for="mdpconnect" class="">Mot de passe :</label>
       <input type="password" placeholder="mot de passe" id="password" name="mdpconnect"
