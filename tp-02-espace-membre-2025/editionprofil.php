@@ -82,7 +82,7 @@ if(isset($_SESSION['id']) AND $_SESSION['id']>0){
      * 
      * */
 
-     //Verification de la présence d'un fichier uploadé
+     //1-Verification de la présence d'un fichier uploadé
      if(!empty($_FILES['avatar']['name'])){
         $maxIze= 2*1024*1024; // 2Mo 
         //Taableau des extensions autorisées
