@@ -88,7 +88,7 @@ if(isset($_SESSION['id']) AND $_SESSION['id']>0){
         //Taableau des extensions autorisées
         $validExt = ['jpg', 'jpeg', 'gif', 'png'];
 
-        //Verification de la taille de l'image
+        //2-Verification de la taille de l'image
         if($_FILES['avatar']['size'] <= $maxIze){
           //Recuperation de l'extension du fichier
           $ext =strtolower(pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION));
