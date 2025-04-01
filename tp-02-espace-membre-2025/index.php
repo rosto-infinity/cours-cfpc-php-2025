@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
   
   function register($pseudo, $mail, $mail2, $mdp ,$mdp2){
     global $pdo;
-    // vérification des champs
+    // 02-vérification des champs
     if(empty($pseudo) || empty($mail) || empty($mail2) || empty($mdp) || empty($mdp2)){
       return "Tous les champs doivent être remplis";
     }
