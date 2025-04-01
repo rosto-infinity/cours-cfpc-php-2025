@@ -116,6 +116,7 @@ if(isset($_SESSION['id']) AND $_SESSION['id']>0){
              }  
           
         }else {
+          // "La taille de l'imge ne doit pas depasser 2 Mo";
          $erreur = "La taille de l'imge ne doit pas depasser 2 Mo";
         }
     }else{
