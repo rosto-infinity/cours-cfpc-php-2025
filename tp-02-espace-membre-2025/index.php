@@ -31,7 +31,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
       return "Le pseudo est déjà utilisé";
     }
     
-    // vérification du mail
+    //04- vérification du mail
     if($mail != $mail2){
       return "Les mails ne correspondent pas";
     }
