@@ -49,7 +49,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
       return "Le mail est déjà utilisé";
     }
 
-    // vérification du mot de passe
+    // 05-vérification du mot de passe
     if(strlen($mdp<8) || !preg_match("#[0-9]+#", $mdp) || !preg_match("#[a-zA-Z]+#", $mdp) ){
       return "Le mot de passe doit contenir au moins 8 caractères, une lettre et un chiffre";
     }
