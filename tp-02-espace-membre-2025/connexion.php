@@ -21,7 +21,7 @@ function handlePostRequest($pdo)
 
 function authenticateUser($pdo, $mailconnect, $mdpconnect)
 {
-  // vérification du mail
+  // 03-vérification du mail
   $sql = "SELECT * FROM membres WHERE mail = :mailconnect";
   $reqMail = $pdo->prepare($sql);
   $reqMail->execute(compact('mailconnect'));
