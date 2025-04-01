@@ -4,7 +4,7 @@ require_once 'database.php';
 
 function handlePostRequest($pdo)
 {
-  //Verification du type de requete
+  //01-Verification du type de requete
   if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     return;
   }
