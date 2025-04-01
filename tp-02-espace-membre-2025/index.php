@@ -74,92 +74,61 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 }
 
 ?>
+
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link href="src/output.css" rel="stylesheet">
+  <title>Inscription</title>
+  <link rel="stylesheet" href="src/output.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-  <div align="center">
-    <h2>Inscription prof</h2>
-   
-    <br /><br />
+<body class="bg-green-100 flex items-center justify-center min-h-screen">
+  <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
+    <h2 class="text-2xl font-bold text-green-700 text-center mb-4">Inscription</h2>
+
+    <?php if(isset($error)) : ?>
+    <p class="bg-red-500 text-white text-center p-2 rounded mb-4"> <?= $error ?> </p>
+    <?php endif; ?>
+
     <form method="POST" action="">
-
-      <?php 
-      if(isset($error)){
-        echo "<p style='background:red; width:300px; color:white; padding:12px;'>".$error."</p>";
-      }
-      
-      
-      ?>
-
-      <table>
-        <tr>
-          <td align="right">
-            <label for="pseudo">Pseudo :</label>
-          </td>
-          <td>
-            <input type="text" placeholder="Votre pseudo" id="pseudo" name="pseudo" value="<?= $pseudo  ?? ''?>" /
-              autocomplete="off">
-
-
-          </td>
-        </tr>
-        <tr>
-          <td align=" right">
-            <label for="mail">Mail :</label>
-          </td>
-          <td>
-            <input type="mail" placeholder="Votre mail" value="<?= $mail  ?? ''?>" id="mail" name="mail"
-              autocomplete="off" />
-          </td>
-        </tr>
-        <tr>
-          <td align="right">
-            <label for="mail2">Confirmation du mail :</label>
-          </td>
-          <td>
-
-            <input type="mail" value="<?= $mail  ?? ''?>" placeholder="Confirmez votre mail" id="mail2" name="mail2"
-              autocomplete="off" />
-
-          </td>
-        </tr>
-        <tr>
-          <td align="right">
-            <label for="mdp">Mot de passe :</label>
-          </td>
-          <td>
-            <input type="password" placeholder="Votre mot de passe" id="mdp" name="mdp" />
-          </td>
-        </tr>
-        <tr>
-          <td align="right">
-            <label for="mdp2">Confirmation du mot de passe :</label>
-          </td>
-          <td>
-            <input type="password" placeholder="Confirmez votre mdp" id="mdp2" name="mdp2" />
-          </td>
-        </tr>
-        <tr>
-          <td></td>
-          <td align="center">
-            <br />
-
-            <input type="submit" name="forminscription" value="Je m'inscris" /> Déjà un compte ?<a
-              href="connexion.php">Se connecter</a>
-          </td>
-        </tr>
-      </table>
+      <div class="mb-4">
+        <label for="pseudo" class="block text-gray-700">Pseudo :</label>
+        <input type="text" id="pseudo" name="pseudo" placeholder="Votre pseudo" value="<?= $pseudo ?? '' ?>"
+          class="w-full p-2 border border-green-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500">
+      </div>
+      <div class="mb-4">
+        <label for="mail" class="block text-gray-700">Mail :</label>
+        <input type="email" id="mail" name="mail" placeholder="Votre mail" value="<?= $mail ?? '' ?>"
+          class="w-full p-2 border border-green-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500">
+      </div>
+      <div class="mb-4">
+        <label for="mail2" class="block text-gray-700">Confirmation du mail :</label>
+        <input type="email" id="mail2" name="mail2" placeholder="Confirmez votre mail" value="<?= $mail ?? '' ?>"
+          class="w-full p-2 border border-green-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500">
+      </div>
+      <div class="mb-4">
+        <label for="mdp" class="block text-gray-700">Mot de passe :</label>
+        <input type="password" id="mdp" name="mdp" placeholder="Votre mot de passe"
+          class="w-full p-2 border border-green-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500">
+      </div>
+      <div class="mb-4">
+        <label for="mdp2" class="block text-gray-700">Confirmation du mot de passe :</label>
+        <input type="password" id="mdp2" name="mdp2" placeholder="Confirmez votre mot de passe"
+          class="w-full p-2 border border-green-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500">
+      </div>
+      <div class="flex flex-col items-center">
+        <button type="submit" name="forminscription"
+          class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">
+          Je m'inscris
+        </button>
+        <p class="mt-2 text-gray-600">Déjà un compte ? <a href="connexion.php" class="text-green-700 font-bold">Se
+            connecter</a></p>
+      </div>
     </form>
-
   </div>
 </body>
 

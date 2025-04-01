@@ -40,38 +40,51 @@ if(isset($_SESSION['id']) AND $_SESSION['id']>0){
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TUTO PHP</title>
-  <meta charset="utf-8">
+  <!-- Intégration de Tailwind CSS v4 -->
+  <link rel="stylesheet" href="src/output.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-  <head>
-    <title>TUTO PHP</title>
-    <meta charset="utf-8">
-  </head>
-
-<body>
-  <div align="center">
-    <h2>Edition de mon profil</h2>
-    <?php
-if (isset($erreur)) {
-echo '<font color="red">' . $erreur . "</font>";
-}
-?>
-    <div align="left">
-      <form method="POST" action="" enctype="multipart/form-data">
-        <label>Pseudo :</label>
-        <input type="text" name="newpseudo" placeholder="Pseudo" value="<?= $user['pseudo'];?>" /><br /><br />
-        <label>Mail :</label>
-        <input type="text" name="newmail" placeholder="Mail" value="<?= $user['mail'];?>" /><br /><br />
-        <label>Mot de passe :</label>
-        <input type="password" name="newmdp1" placeholder="Mot de passe" /><br /><br />
-        <label>Confirmation - mot de passe :</label>
-        <input type="password" name="newmdp2" placeholder="Confirmation du mot de passe" /><br /><br />
-        <label for="">Avatar :</label>
-        <input type="file" name="avatar" /><br /><br />
-        <input type="submit" value="Mettre à jour mon profil !" />
+<body class="bg-green-50">
+  <div class="flex flex-col items-center justify-center min-h-screen">
+    <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
+      <h2 class="text-2xl font-bold text-green-700 text-center mb-6">Edition de mon profil</h2>
+      <?php
+      if (isset($erreur)) {
+        echo '<p class="text-red-500 text-center mb-4">' . $erreur . '</p>';
+      }
+      ?>
+      <form method="POST" action="" enctype="multipart/form-data" class="space-y-4">
+        <div>
+          <label for="newpseudo" class="block text-green-700 font-medium">Pseudo :</label>
+          <input type="text" id="newpseudo" name="newpseudo" placeholder="Pseudo" value="<?= $user['pseudo'];?>"
+            class="w-full px-4 py-2 border border-green-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500">
+        </div>
+        <div>
+          <label for="newmail" class="block text-green-700 font-medium">Mail :</label>
+          <input type="text" id="newmail" name="newmail" placeholder="Mail" value="<?= $user['mail'];?>"
+            class="w-full px-4 py-2 border border-green-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500">
+        </div>
+        <div>
+          <label for="newmdp1" class="block text-green-700 font-medium">Mot de passe :</label>
+          <input type="password" id="newmdp1" name="newmdp1" placeholder="Mot de passe"
+            class="w-full px-4 py-2 border border-green-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500">
+        </div>
+        <div>
+          <label for="newmdp2" class="block text-green-700 font-medium">Confirmation - mot de passe :</label>
+          <input type="password" id="newmdp2" name="newmdp2" placeholder="Confirmation du mot de passe"
+            class="w-full px-4 py-2 border border-green-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500">
+        </div>
+        <div>
+          <label for="avatar" class="block text-green-700 font-medium">Avatar :</label>
+          <input type="file" id="avatar" name="avatar" class="w-full text-green-700">
+        </div>
+        <div>
+          <input type="submit" value="Mettre à jour mon profil !"
+            class="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600 transition-colors">
+        </div>
       </form>
-      <?php if (isset($msg)) {
-        echo $msg;
-      } ?>
+      <?php if (isset($msg)) { echo '<p class="mt-4 text-green-700 text-center">' . $msg . '</p>'; } ?>
     </div>
   </div>
 </body>
