@@ -99,7 +99,7 @@ if(isset($_SESSION['id']) AND $_SESSION['id']>0){
               //4- Chemin de destination pour l'upload de l'image
              $destination ="membres/avatars/" .$newFilename; 
              
-             // Deplacement de l'image uploadée vers le dossier de destination
+             // 5-Deplacement de l'image uploadée vers le dossier de destination
              if(move_uploaded_file($_FILES['avatar']['tmp_name'], $destination)){
                 $requpdate = $pdo->prepare("UPDATE membres SET avatar = ? WHERE id = ?");
                 $requpdate->execute([$newFilename, $_SESSION['id']]); 
