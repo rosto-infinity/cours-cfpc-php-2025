@@ -96,7 +96,7 @@ if(isset($_SESSION['id']) AND $_SESSION['id']>0){
              if(in_array($ext,$validExt)){
               //03+Renommer l'image uploadée (id de l'utilisateur. l'extension de l'image) 
               $newFilename = $_SESSION['id'] . "." .$ext;
-              // Chemin de destination pour l'upload de l'image
+              //4- Chemin de destination pour l'upload de l'image
              $destination ="membres/avatars/" .$newFilename; 
              
              // Deplacement de l'image uploadée vers le dossier de destination
