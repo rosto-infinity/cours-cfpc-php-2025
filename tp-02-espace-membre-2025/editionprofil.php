@@ -31,7 +31,97 @@ if(isset($_SESSION['id']) AND $_SESSION['id']>0){
     
     } 
 
-}
+    //mise a jour de l'email
+    if(!empty($_POST['newmail']) && $_POST['newmail'] !== $user['mail']){
+        $newmail = htmlspecialchars($_POST['newmail']);
+        if(filter_var($newmail, FILTER_VALIDATE_EMAIL)){
+            $reqmail = $pdo->prepare("SELECT *FROM membres  WHERE mail = ?");
+            $reqmail ->execute([$newmail]);
+
+            $mailexist = $reqmail->rowCount();
+            if($mailexist == 0){
+                $requpdate = $pdo->prepare("UPDATE membres SET mail = ? WHERE id = ?");
+                $requpdate->execute([$newmail, $_SESSION['id']]);
+                $_SESSION['mail'] = $newmail;
+                header("Location: profil.php?id=".$_SESSION['id']);
+
+            }else{
+                $erreur = "Cet email est déjà utilisé !";
+            }     
+          
+        }else{
+            $erreur = "Votre email n'est pas valide !";
+        }
+    
+    }
+
+    //Mise a jour du mdp
+
+    if(!empty($_POST['newmdp1']) && !empty($_POST['newmdp2'])){
+        if($_POST['newmdp1'] === $_POST['newmdp2']){
+            $newMdp = password_hash($_POST['newmdp1'], PASSWORD_DEFAULT);
+            $requpdate = $pdo->prepare("UPDATE membres SET mdp = ? WHERE id = ?");
+            $requpdate->execute([$newMdp, $_SESSION['id']]); 
+         }else{
+                $erreur = "Vos mots de passe ne correspondent pas !";
+            } 
+    }else{
+        $erreur = "Veuillez remplir  les champs mot de passe !";
+    }
+
+
+
+    /** 
+     * Mise de l'avatar 
+      * 1 - Verification de l'upload de l'image
+      * 2 - Verification de la taille de l'image
+      * 3 - Verification de l'extension de l'image est autorisé
+      * 4 - Renommer l'image uploadée (id de l'user 'extension de l'image)
+      * 5 - Chemin de destination pour l'upload de l'image
+      * 6 - Deplacement de l'image uploadée vers le dossier de destination
+     * 
+     * */
+
+     //Verification de la présence d'un fichier uploadé
+     if(!empty($_FILES['avatar']['name'])){
+        $maxIze= 2*1024*1024; // 2Mo 
+        //Taableau des extensions autorisées
+        $validExt = ['jpg', 'jpeg', 'gif', 'png'];
+
+        //Verification de la taille de l'image
+        if($_FILES['avatar']['size'] <= $maxIze){
+          //Recuperation de l'extension du fichier
+          $ext =strtolower(pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION));
+          //Verification de l'extension du fichier est autorisée
+             if(in_array($ext,$validExt)){
+              //Renommer l'image uploadée (id de l'utilisateur. l'extension de l'image) 
+              $newFilename = $_SESSION['id'] . "." .$ext;
+              // Chemin de destination pour l'upload de l'image
+             $destination ="membres/avatars/" .$newFilename; 
+             
+             // Deplacement de l'image uploadée vers le dossier de destination
+             if(move_uploaded_file($_FILES['avatar']['tmp_name'], $destination)){
+                $requpdate = $pdo->prepare("UPDATE membres SET avatar = ? WHERE id = ?");
+                $requpdate->execute([$newFilename, $_SESSION['id']]); 
+                header("Location: profil.php?id=".$_SESSION['id']);
+                exit();
+              }else{
+                $erreur = "Erreur lors de l'upload de l'image !";
+              }
+                
+             } else{
+               $erreur = "Format d'image non autorisé ( 'jpg', 'jpeg', 'gif', 'png' requis)!";
+             }  
+          
+        }else {
+         $erreur = "La taille de l'imge ne doit pas depasser 2 Mo";
+        }
+    }else{
+       $erreur = "Veuillez selectionner une image !";
+    }
+
+    
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -84,7 +174,7 @@ if(isset($_SESSION['id']) AND $_SESSION['id']>0){
             class="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600 transition-colors">
         </div>
       </form>
-      <?php if (isset($msg)) { echo '<p class="mt-4 text-green-700 text-center">' . $msg . '</p>'; } ?>
+
     </div>
   </div>
 </body>
