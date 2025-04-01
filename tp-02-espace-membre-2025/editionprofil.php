@@ -92,7 +92,7 @@ if(isset($_SESSION['id']) AND $_SESSION['id']>0){
         if($_FILES['avatar']['size'] <= $maxIze){
           //Recuperation de l'extension du fichier
           $ext =strtolower(pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION));
-          //Verification de l'extension du fichier est autorisée
+          //3-Verification de l'extension du fichier est autorisée
              if(in_array($ext,$validExt)){
               //Renommer l'image uploadée (id de l'utilisateur. l'extension de l'image) 
               $newFilename = $_SESSION['id'] . "." .$ext;
