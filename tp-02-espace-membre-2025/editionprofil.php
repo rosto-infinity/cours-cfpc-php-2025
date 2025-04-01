@@ -94,7 +94,7 @@ if(isset($_SESSION['id']) AND $_SESSION['id']>0){
           $ext =strtolower(pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION));
           //3-Verification de l'extension du fichier est autorisée
              if(in_array($ext,$validExt)){
-              //Renommer l'image uploadée (id de l'utilisateur. l'extension de l'image) 
+              //03+Renommer l'image uploadée (id de l'utilisateur. l'extension de l'image) 
               $newFilename = $_SESSION['id'] . "." .$ext;
               // Chemin de destination pour l'upload de l'image
              $destination ="membres/avatars/" .$newFilename; 
