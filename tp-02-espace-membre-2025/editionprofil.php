@@ -111,6 +111,7 @@ if(isset($_SESSION['id']) AND $_SESSION['id']>0){
               }
                 
              } else{
+              // "Format d'image non autorisé ( 'jpg', 'jpeg', 'gif', 'png' requis)!"
                $erreur = "Format d'image non autorisé ( 'jpg', 'jpeg', 'gif', 'png' requis)!";
              }  
           
