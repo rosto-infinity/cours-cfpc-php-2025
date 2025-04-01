@@ -8,7 +8,7 @@ function handlePostRequest($pdo)
   if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     return;
   }
-  //réception des données du formulaire
+  //02-réception des données du formulaire
   $mailconnect = htmlspecialchars($_POST['mailconnect']);
   $mdpconnect = $_POST['mdpconnect'];
   if (empty($mailconnect) || empty($mdpconnect)) {
