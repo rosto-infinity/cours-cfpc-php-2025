@@ -43,7 +43,7 @@ function authenticateUser($pdo, $mailconnect, $mdpconnect)
    $_SESSION['pseudo'] = $userinfo['pseudo'];
    $_SESSION['mail'] = $userinfo['mail'];
  
-   //Redirection vers la page dedition
+   //05-Redirection vers la page dedition
    header("Location: profil.php?id=" . $_SESSION['id']);
    exit();
 }
