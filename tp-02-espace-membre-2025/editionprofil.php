@@ -31,7 +31,7 @@ if(isset($_SESSION['id']) AND $_SESSION['id']>0){
     
     } 
 
-    //mise a jour de l'email
+    //01-mise a jour de l'email
     if(!empty($_POST['newmail']) && $_POST['newmail'] !== $user['mail']){
         $newmail = htmlspecialchars($_POST['newmail']);
         if(filter_var($newmail, FILTER_VALIDATE_EMAIL)){
