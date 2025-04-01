@@ -55,7 +55,7 @@ if(isset($_SESSION['id']) AND $_SESSION['id']>0){
     
     }
 
-    //Mise a jour du mdp
+    //02-Mise a jour du mdp
 
     if(!empty($_POST['newmdp1']) && !empty($_POST['newmdp2'])){
         if($_POST['newmdp1'] === $_POST['newmdp2']){
