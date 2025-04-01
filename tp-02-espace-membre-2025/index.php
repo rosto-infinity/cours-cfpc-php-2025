@@ -58,7 +58,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
       return "Les mots de passe ne correspondent pas";
      }
 
-    // cryptage du mot de passe
+    // 06-cryptage du mot de passe
     $mdp = password_hash($mdp, PASSWORD_DEFAULT);
 
 
