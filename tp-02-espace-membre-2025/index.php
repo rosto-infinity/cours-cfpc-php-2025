@@ -63,7 +63,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 
     
-    // insertion des données dans la base de données
+    // 07-insertion des données dans la base de données
     $sql = "INSERT INTO membres (pseudo, mail, mdp) VALUES (:pseudo, :mail, :mdp)";
     $req = $pdo->prepare($sql);
     $req->execute(compact('pseudo', 'mail', 'mdp'));
