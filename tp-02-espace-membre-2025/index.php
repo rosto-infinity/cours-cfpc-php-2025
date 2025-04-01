@@ -3,7 +3,7 @@
 require_once 'database.php';
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-  //réception des données du formulaire
+  //01-réception des données du formulaire
   $pseudo = htmlspecialchars($_POST['pseudo']);
   $mail = htmlspecialchars($_POST['mail']);
   $mail2 = htmlspecialchars($_POST['mail2']);
