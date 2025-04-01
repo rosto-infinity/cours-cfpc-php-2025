@@ -106,6 +106,7 @@ if(isset($_SESSION['id']) AND $_SESSION['id']>0){
                 header("Location: profil.php?id=".$_SESSION['id']);
                 exit();
               }else{
+                //Erreur lors de l'upload de l'imag
                 $erreur = "Erreur lors de l'upload de l'image !";
               }
                 
