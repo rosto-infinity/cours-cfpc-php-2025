@@ -18,7 +18,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
       return "Tous les champs doivent être remplis";
     }
 
-    // vérification du pseudo
+    //03- vérification du pseudo
     if(strlen($pseudo) > 255){
       return "Le pseudo est trop long";
     }
