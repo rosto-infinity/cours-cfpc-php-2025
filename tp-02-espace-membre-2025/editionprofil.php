@@ -120,6 +120,7 @@ if(isset($_SESSION['id']) AND $_SESSION['id']>0){
          $erreur = "La taille de l'imge ne doit pas depasser 2 Mo";
         }
     }else{
+      //"Veuillez selectionner une image !"
        $erreur = "Veuillez selectionner une image !";
     }
 
