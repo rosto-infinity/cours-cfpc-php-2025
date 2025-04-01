@@ -38,7 +38,7 @@ function authenticateUser($pdo, $mailconnect, $mdpconnect)
     return 'Mauvais mot de passe';
   }
 
-   //Définition des variables de session
+   //04-Définition des variables de session
    $_SESSION['id'] = $userinfo['id'];
    $_SESSION['pseudo'] = $userinfo['pseudo'];
    $_SESSION['mail'] = $userinfo['mail'];
