@@ -5,7 +5,7 @@
 // Tableaux indexés
 // ===================================================
 
-// Création d'un tableau de fruits (nouvelles valeurs)
+// 1-Création d'un tableau de fruits (nouvelles valeurs)
 $fruits = ["Mango", "Strawberry", "Blueberry"];
 
 // Affichage complet du tableau
