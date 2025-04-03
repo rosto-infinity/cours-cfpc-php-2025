@@ -53,7 +53,7 @@ echo '<pre>';
 var_dump(explode(",", $string));
 echo '</pre>';
 
-// Affichage du tableau avec print_r
+// 12-Affichage du tableau avec print_r
 print_r($fruits);
 
 // Combinaison des éléments du tableau en une chaîne
