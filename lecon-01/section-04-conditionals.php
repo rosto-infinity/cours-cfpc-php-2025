@@ -6,7 +6,7 @@
 $age=10;
 $salary = 450000;
 
-// Opérateur ternaire simple
+//1- Opérateur ternaire simple
 echo $age < 22 ? 'Young' : 'Old'; // Affiche "Old" car 25 n'est pas inférieur à 22
 echo '<br>';
 
