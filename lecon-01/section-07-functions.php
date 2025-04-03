@@ -1,5 +1,5 @@
 <?php
-//01-Fonction en php
+//01-Fonction en php 8.x
 function hello($name): void
 {
   echo "Hello $name<br>";
