@@ -15,7 +15,7 @@ echo "Modulo" .($a % $b) . "<br>";
 
 //02- Nouveauté PHP 8.x : fdiv() permet de diviser en gérant correctement les cas de division par zéro
 echo "Division flottante avec fdiv : " . fdiv($a, $d) . '<br>';
-// 3. Opérateurs d'assignation arithmétique
+// 3. 03Opérateurs d'assignation arithmétique
 $a += $b; // équivaut à $a = $a + $b;
 echo "Après addition, $a = $a<br>";
 $a -= $b; // équivaut à $a = $a - $b;
@@ -27,7 +27,7 @@ echo "Après division, \$a = $a<br>";
 $a %= $b; // équivaut à $a = $a % $b;
 echo "Après modulo, \$a = $a<br>";
 
-// 4. Opérateurs d'incrémentation
+// 4. 04Opérateurs d'incrémentation
 
 $a = 75;
 $b=8;
