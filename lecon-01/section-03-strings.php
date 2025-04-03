@@ -67,7 +67,7 @@ echo "16 - Remplacement insensible (world => PHP) : " . str_ireplace('world', 'P
 $invoiceNumber = 140;
 $invoiceNumber2 = 453456;
 
-// Compléter un numéro de facture sur 8 chiffres en le remplissant de zéros à gauche
+// 18Compléter un numéro de facture sur 8 chiffres en le remplissant de zéros à gauche
 echo str_pad($invoiceNumber, 8, '0', STR_PAD_LEFT) . '<br>';
 echo str_pad($invoiceNumber2, 8, '0', STR_PAD_LEFT) . '<br>';
 
