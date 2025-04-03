@@ -23,7 +23,7 @@ $name = null;
 $displayName = $name ?? 25888;
 echo "Name:------ " . $displayName . '<br>';
 
-// Opérateur de fusion null-assignment (depuis PHP 7.4)
+// 5-Opérateur de fusion null-assignment (depuis PHP 7.4)
 $person = [
     'name'  // Si cette clé était absente, on lui assignerait "Anonymous"
 ];
