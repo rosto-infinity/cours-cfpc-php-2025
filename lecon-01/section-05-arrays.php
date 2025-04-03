@@ -113,10 +113,10 @@ $person = [
     'hobbies'  => ['Cycling', 'Photography'],
 ];
 
-// Accès à un élément par clé (affiche "Owen")
+// 23-Accès à un élément par clé (affiche "Owen")
 echo $person['name'] . '<br>';
 
-// Ajout d'une nouvelle clé-valeur
+// 24--Ajout d'une nouvelle clé-valeur
 $person['channel'] = 'OwenEvaChannel';
 
 // Vérification de l'existence d'une clé spécifique
