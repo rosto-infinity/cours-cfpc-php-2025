@@ -71,7 +71,7 @@ $invoiceNumber2 = 453456;
 echo str_pad($invoiceNumber, 8, '0', STR_PAD_LEFT) . '<br>';
 echo str_pad($invoiceNumber2, 8, '0', STR_PAD_LEFT) . '<br>';
 
-// Répéter une chaîne plusieurs fois
+// 19-Répéter une chaîne plusieurs fois
 echo str_repeat('Hello', 2) . '<br>';
 
 // 5. Texte multi-lignes et gestion des sauts de ligne
