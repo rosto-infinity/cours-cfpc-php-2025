@@ -91,7 +91,7 @@ echo '<pre>';
 var_dump($evens);
 echo '</pre>';
 
-// Ajouter 1 à chaque élément
+// 20-Ajouter 1 à chaque élément
 $squares = array_map(fn($n) => $n + 1, $numbers);
 echo '<pre>';
 var_dump($squares);
