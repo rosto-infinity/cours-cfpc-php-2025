@@ -116,7 +116,7 @@ $person = [
 // 23-Accès à un élément par clé (affiche "Owen")
 echo $person['name'] . '<br>';
 
-// 24--Ajout d'une nouvelle clé-valeur
+// 024--Ajout d'une nouvelle clé-valeur
 $person['channel'] = 'OwenEvaChannel';
 
 // Vérification de l'existence d'une clé spécifique
