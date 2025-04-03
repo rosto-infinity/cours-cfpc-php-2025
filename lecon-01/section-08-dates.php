@@ -15,7 +15,7 @@ echo "Hier : " . date('Y-m-d H:i:s', time() - 86400) . '<br>';
 // 04. Afficher la date dans un format personnalisé
 echo "Format personnalisé : " . date('F j Y, H:i:s') . '<br>';
 
-// 5. Conversion d'une chaîne en timestamp
+// 05. Conversion d'une chaîne en timestamp
 echo "Timestamp ('now') : " . strtotime('now') . '<br>';
 echo "Timestamp ('+1 day') : " . strtotime('+1 day') . '<br>';
 echo "Timestamp ('+1 week') : " . strtotime('+1 week') . '<br>';
