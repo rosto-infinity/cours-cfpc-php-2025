@@ -14,7 +14,7 @@ echo '<br>';
 echo $age < 22 ? ($age < 16 ? 'Too young' : 'Young') : 'Old';
 echo '<br>';
 
-// 3-Opérateur ternaire court (Null coalescing pour la vérification de variable)
+// 03-Opérateur ternaire court (Null coalescing pour la vérification de variable)
 $myAge = $age ? : 18; // Si $age est évalué à false, 18 est assigné
 echo "myAge = $myAge<br>";
 
