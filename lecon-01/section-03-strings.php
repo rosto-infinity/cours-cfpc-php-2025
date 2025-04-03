@@ -23,7 +23,7 @@ echo "1 - Longueur : " . strlen($string) . '<br>';
 // 02Suppression des espaces en début et fin de chaîne
 echo "2 - Sans espaces : '" . trim($string) . "'<br>";
 
-// Suppression des espaces à gauche
+// 04-Suppression des espaces à gauche
 echo "3 - Sans espaces à gauche : '" . ltrim($string) . "'<br>";
 
 // Suppression des espaces à droite
