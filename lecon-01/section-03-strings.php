@@ -63,7 +63,7 @@ echo "15 - Remplacement (World => PHP) : " . str_replace('World', 'PHP', $string
 // 16Remplacement d'une sous-chaîne (insensible à la casse)
 echo "16 - Remplacement insensible (world => PHP) : " . str_ireplace('world', 'PHP', $string) . '<br>';
 
-// 4. Fonctions avancées sur les chaînes
+// 4. ,Fonctions avancées sur les chaînes
 $invoiceNumber = 140;
 $invoiceNumber2 = 453456;
 
