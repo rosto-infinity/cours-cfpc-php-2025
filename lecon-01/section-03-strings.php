@@ -10,7 +10,7 @@ $string2 = 'Hello ' . $author;       // Utilisation de la concaténation (simple
 echo $string . '<br>';
 echo $string2 . '<br>';
 
-// 2. Concaténation de chaînes
+// 2. 02Concaténation de chaînes
 echo "Hello " . "World" . '<br>';
 // Vous pouvez concaténer plusieurs chaînes en utilisant l'opérateur "."
 
