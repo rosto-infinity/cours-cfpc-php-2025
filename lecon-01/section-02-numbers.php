@@ -27,7 +27,7 @@ echo "Après division, \$a = $a<br>";
 $a %= $b; // équivaut à $a = $a % $b;
 echo "Après modulo, \$a = $a<br>";
 
-// 4. 04Opérateurs d'incrémentation
+// 4. 04-Opérateurs d'incrémentation
 
 $a = 75;
 $b=8;
@@ -52,7 +52,7 @@ floatval($strNumber);
 var_dump($number);
 echo '<br>';
 
-// 8. Fonctions mathématiques
+// 8. 02-Fonctions mathématiques
 echo "abs(-15) : " . abs(-15) . '<br>';
 echo "pow(2, 3) : " . pow(2, 3) . '<br>';
 echo "sqrt(16) : " . sqrt(16) . '<br>';
