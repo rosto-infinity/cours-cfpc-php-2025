@@ -63,7 +63,7 @@ echo "round(2.6) : " . round(2.6) . '<br>';
 echo "floor(2.6) : " . floor(2.6) . '<br>';
 echo "ceil(2.4) : " . ceil(2.4) . '<br>';
 
-// 9. Formatage des nombres
+// 9. 09-Formatage des nombres
 $nombre = 123456789.12345;
 
 // Utilisation des arguments nommés (une nouveauté de PHP 8.x) pour une meilleure lisibilité
