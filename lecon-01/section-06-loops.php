@@ -17,7 +17,7 @@ do {
     $counter++;
 } while ($counter < 5);
 
-// 004--Boucle for
+// 004--Boucle for (pour)
 for ($i = 0; $i < 5; $i++) {
     echo "For loop counter: $i<br>";
 }
