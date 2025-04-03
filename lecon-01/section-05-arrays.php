@@ -35,7 +35,7 @@ echo $fruits[3] . '<br>';
 // 8-Affichage de la longueur du tableau
 echo count($fruits) . '<br>';
 
-// Ajout d'un élément à la fin du tableau avec array_push et suppression du dernier élément avec array_pop
+// 9-Ajout d'un élément à la fin du tableau avec array_push et suppression du dernier élément avec array_pop
 array_push($fruits, "Dragonfruit");
 array_pop($fruits);
 
