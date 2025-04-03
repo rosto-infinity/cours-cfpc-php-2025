@@ -59,7 +59,7 @@ print_r($fruits);
 // 13-Combinaison des éléments du tableau en une chaîne
 echo implode(",", $fruits) . '<br>';
 
-// Vérification de l'existence d'un élément dans le tableau
+// 14-Vérification de l'existence d'un élément dans le tableau
 echo '<pre>';
 var_dump(in_array("Apple", $fruits));
 echo '</pre>';
