@@ -28,7 +28,7 @@ echo '<pre>';
 var_dump($parsedDate);
 echo '</pre>';
 
-// 7. Analyse d'une date avec un format spécifique
+// 07. Analyse d'une date avec un format spécifique
 // Exemple avec une date en anglais pour 2024
 $dateString = 'February 4 2024 12:45:35';
 $parsedDate = date_parse_from_format('F j Y H:i:s', $dateString);
