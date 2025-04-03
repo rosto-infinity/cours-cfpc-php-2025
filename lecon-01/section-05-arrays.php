@@ -64,7 +64,7 @@ echo '<pre>';
 var_dump(in_array("Apple", $fruits));
 echo '</pre>';
 
-// Recherche de l'index d'un élément dans le tableau
+// 15-Recherche de l'index d'un élément dans le tableau
 echo '<pre>';
 var_dump(array_search("Peach", $fruits));
 echo '</pre>';
