@@ -82,7 +82,7 @@ echo '<pre>';
 var_dump($fruits);
 echo '</pre>';
 
-// 18-Utilisation des fonctions filter, map et reduce
+// 18--Utilisation des fonctions filter, map et reduce
 $numbers = [1, 2, 3, 4, 5, 6, 7, 8];
 
 // Filtrer les nombres pairs
