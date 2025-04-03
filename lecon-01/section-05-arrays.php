@@ -20,7 +20,7 @@ echo '</pre>';
 // 4-Accès à un élément par index (affiche "Strawberry")
 echo $fruits[1] . '<br>';
 
-// Modification d'un élément par index
+// 5-Modification d'un élément par index
 $fruits[0] = "Peach";
 
 // Vérification de l'existence d'un élément à l'index 2
