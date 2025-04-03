@@ -1,53 +1,73 @@
 <?php
-session_start();
-require_once 'database.php';
+    session_start();
+    require_once 'database.php';
 
-function handlePostRequest($pdo)
-{
-  //01-Verification du type de requete
-  if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    return;
-  }
-  //02-réception des données du formulaire
-  $mailconnect = htmlspecialchars($_POST['mailconnect']);
-  $mdpconnect = $_POST['mdpconnect'];
-  if (empty($mailconnect) || empty($mdpconnect)) {
-    return "Tous les champs doivent être remplis";
-  }
-  
+    function handlePostRequest($pdo)
+    {
+        //01-Verification du type de requete
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            return;
+        }
+        //02-réception des données du formulaire
+        $mailconnect = htmlspecialchars($_POST['mailconnect']);
+        $mdpconnect  = $_POST['mdpconnect'];
+        if (empty($mailconnect) || empty($mdpconnect)) {
+            return "Tous les champs doivent être remplis";
+        }
 
-  return authenticateUser($pdo, $mailconnect, $mdpconnect);
-}
+        return authenticateUser($pdo, $mailconnect, $mdpconnect);
+    }
 
-function authenticateUser($pdo, $mailconnect, $mdpconnect)
-{
-  // 03-vérification du mail
-  $sql = "SELECT * FROM membres WHERE mail = :mailconnect";
-  $reqMail = $pdo->prepare($sql);
-  $reqMail->execute(compact('mailconnect'));
-  $mailExist = $reqMail->rowCount();
-  if (!$mailExist) {
-    return "Le mail n'existe pas";
-  }
-  $userinfo = $reqMail->fetch();
-  // echo "<pre>";
-  // print_r($userinfo['mdp']);
-  // echo "</pre>";
-  // die();
-  if (!password_verify($mdpconnect, $userinfo['mdp'])) {
-    return 'Mauvais mot de passe';
-  }
+    function authenticateUser($pdo, $mailconnect, $mdpconnect)
+    {
+        // 03-vérification du mail
+        $sql     = "SELECT * FROM membres WHERE mail = :mailconnect";
+        $reqMail = $pdo->prepare($sql);
+        $reqMail->execute(compact('mailconnect'));
+        $mailExist = $reqMail->rowCount();
+        if (! $mailExist) {
+            return "Le mail n'existe pas";
+        }
+        $userinfo = $reqMail->fetch();
+        // echo "<pre>";
+        // print_r($userinfo['mdp']);
+        // echo "</pre>";
+        // die();
+        if (! password_verify($mdpconnect, $userinfo['mdp'])) {
+            return 'Mauvais mot de passe';
+        }
 
-   //04-Définition des variables de session
-   $_SESSION['id'] = $userinfo['id'];
-   $_SESSION['pseudo'] = $userinfo['pseudo'];
-   $_SESSION['mail'] = $userinfo['mail'];
- 
-   //05-Redirection vers la page dedition
-   header("Location: profil.php?id=" . $_SESSION['id']);
-   exit();
-}
-$erreur = handlePostRequest($pdo);
+        //04-Définition des variables de session
+        $_SESSION['id']     = $userinfo['id'];
+        $_SESSION['pseudo'] = $userinfo['pseudo'];
+        $_SESSION['mail']   = $userinfo['mail'];
+          
+            // Si l'utilisateur est authentifié, on stocke les informations dans la session
+            $_SESSION['role'] = $userinfo['role'];
+            $_SESSION['auth'] = $userinfo;
+
+            // Redirection selon le rôle de l'utilisateur
+            switch ($userinfo['role']) {
+                case 'admin':
+                    header("Location: admindofjjzeee/admindofjjzeee-dashboard.php");
+                    break;
+                default:
+                    // redirect(" profil.php?id=" . $_SESSION['id']);
+                    header("Location: profil.php?id=" . $_SESSION['id']);
+                   
+                    break;
+            }
+
+        //05-Redirection vers la page dedition
+        // header("Location: profil.php?id=" . $_SESSION['id']);
+        // exit();
+
+      
+       
+
+       
+    }
+    $erreur = handlePostRequest($pdo);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,14 +84,14 @@ $erreur = handlePostRequest($pdo);
     <h2 class="text-4xl font-bold text-green-900 text-center mb-6">Connexion</h2>
     <br /><br />
     <?php
-    if (isset($erreur)) {
-      echo "<p style='background:red; width:300px; color:white; padding:12px;'>" . $erreur . "</p>";
-    }
+        if (isset($erreur)) {
+            echo "<p style='background:red; width:300px; color:white; padding:12px;'>" . $erreur . "</p>";
+        }
     ?>
     <form method="POST" action="" class="bg-white p-6 rounded shadow max-w-lg mx-auto">
       <label for="mailconnect" class="">Mail :</label>
       <input type="mail" placeholder=" mailconnect" id="mailconnect" name="mailconnect" autocomplete="$off"
-        value="<?= $mailconnect ?? '' ?>"
+        value="<?php echo $mailconnect ?? ''?>"
         class="w-full border border-green-300 p-2 rounded focus:outline-none focus:border-green-500" />
       <label for="mdpconnect" class="">Mot de passe :</label>
       <input type="password" placeholder="mot de passe" id="password" name="mdpconnect"
