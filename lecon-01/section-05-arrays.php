@@ -47,7 +47,7 @@ echo '</pre>';
 array_unshift($fruits, "Apple");
 array_shift($fruits);
 
-// Conversion d'une chaîne en tableau
+// 11-Conversion d'une chaîne en tableau
 $string = "Mango,Strawberry,Peach+++++++++++++++++++";
 echo '<pre>';
 var_dump(explode(",", $string));
