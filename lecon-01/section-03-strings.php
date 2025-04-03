@@ -42,7 +42,7 @@ echo "8 - En minuscules : " . strtolower($string) . '<br>';
 // 9-Mise en majuscule du premier caractère
 echo "9 - ucfirst('hello fff') : " . ucfirst('hello') . '<br>';
 
-// Mise en minuscule du premier caractère
+// 10-Mise en minuscule du premier caractère
 echo "10 - lcfirst('HELLO') : " . lcfirst('HELLO') . '<br>';
 
 // Mise en majuscule de la première lettre de chaque mot
