@@ -26,7 +26,7 @@ echo "2 - Sans espaces : '" . trim($string) . "'<br>";
 // 04-Suppression des espaces à gauche
 echo "3 - Sans espaces à gauche : '" . ltrim($string) . "'<br>";
 
-// Suppression des espaces à droite
+// 02-Suppression des espaces à droite
 echo "4 - Sans espaces à droite : '" . rtrim($string) . "'<br>";
 
 // Comptage des mots
