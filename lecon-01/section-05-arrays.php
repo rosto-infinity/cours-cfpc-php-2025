@@ -105,7 +105,7 @@ echo $sum . '<br>';
 // Tableaux associatifs
 // ===================================================
 
-// Création d'un tableau associatif pour une personne
+// 22-Création d'un tableau associatif pour une personne
 $person = [
     'name'     => 'Owen',
     'surname'  => 'Eva',
