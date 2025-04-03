@@ -1,5 +1,5 @@
 <?php
-// 1. Déclaration de nombres
+// 1. 01Déclaration de nombres
 $a = -5;
 echo $a;
 $b = 4;
