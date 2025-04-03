@@ -32,7 +32,7 @@ echo '</pre>';
 $fruits[] = "Kiwi";
 echo $fruits[3] . '<br>';
 
-// Affichage de la longueur du tableau
+// 8-Affichage de la longueur du tableau
 echo count($fruits) . '<br>';
 
 // Ajout d'un élément à la fin du tableau avec array_push et suppression du dernier élément avec array_pop
