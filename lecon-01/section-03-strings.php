@@ -45,7 +45,7 @@ echo "9 - ucfirst('hello fff') : " . ucfirst('hello') . '<br>';
 // 10-Mise en minuscule du premier caractère
 echo "10 - lcfirst('HELLO') : " . lcfirst('HELLO') . '<br>';
 
-// Mise en majuscule de la première lettre de chaque mot
+// 11-Mise en majuscule de la première lettre de chaque mot
 echo "11 - ucwords('hello world') : " . ucwords('hello world') . '<br>';
 
 // Recherche de la position d'une sous-chaîne (sensible à la casse)
