@@ -12,7 +12,7 @@ echo "Date actuelle : " . date('Y-m-d H:i:s') . '<br>';
 // 0-3. Afficher la date d'hier (en soustrayant 86400 secondes) php
 echo "Hier : " . date('Y-m-d H:i:s', time() - 86400) . '<br>';
 
-// 4. Afficher la date dans un format personnalisé
+// 04. Afficher la date dans un format personnalisé
 echo "Format personnalisé : " . date('F j Y, H:i:s') . '<br>';
 
 // 5. Conversion d'une chaîne en timestamp
