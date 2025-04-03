@@ -17,7 +17,7 @@ echo '<pre>';
 print_r($fruits);
 echo '</pre>';
 
-// Accès à un élément par index (affiche "Strawberry")
+// 4-Accès à un élément par index (affiche "Strawberry")
 echo $fruits[1] . '<br>';
 
 // Modification d'un élément par index
