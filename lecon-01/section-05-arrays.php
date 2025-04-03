@@ -119,7 +119,7 @@ echo $person['name'] . '<br>';
 // 024--Ajout d'une nouvelle clé-valeur
 $person['channel'] = 'OwenEvaChannel';
 
-// Vérification de l'existence d'une clé spécifique
+// 026-Vérification de l'existence d'une clé spécifique
 echo '<pre>';
 var_dump(isset($person['location']));
 echo '</pre>';
