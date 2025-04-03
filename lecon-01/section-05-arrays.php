@@ -28,7 +28,7 @@ echo '<pre>';
 var_dump(isset($fruits[3]));
 echo '</pre>';
 
-// Ajout d'un élément à la fin du tableau
+// 7-Ajout d'un élément à la fin du tableau
 $fruits[] = "Kiwi";
 echo $fruits[3] . '<br>';
 
