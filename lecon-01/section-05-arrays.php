@@ -43,7 +43,7 @@ echo '<pre>';
 var_dump($fruits);
 echo '</pre>';
 
-// Ajout d'un élément en début de tableau avec array_unshift et suppression du premier élément avec array_shift
+// 10-Ajout d'un élément en début de tableau avec array_unshift et suppression du premier élément avec array_shift
 array_unshift($fruits, "Apple");
 array_shift($fruits);
 
