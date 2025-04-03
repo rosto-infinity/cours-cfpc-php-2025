@@ -6,10 +6,10 @@ date_default_timezone_set('Europe/Paris');
 // 01. Afficher le timestamp actuel
 echo "Timestamp actuel : " . time() . '<br>';
 
-// 2. Afficher la date actuelle
+// 02. Afficher la date actuelle
 echo "Date actuelle : " . date('Y-m-d H:i:s') . '<br>';
 
-// 3. Afficher la date d'hier (en soustrayant 86400 secondes)
+// 0-3. Afficher la date d'hier (en soustrayant 86400 secondes)
 echo "Hier : " . date('Y-m-d H:i:s', time() - 86400) . '<br>';
 
 // 4. Afficher la date dans un format personnalisé
