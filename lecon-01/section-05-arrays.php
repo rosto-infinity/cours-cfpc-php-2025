@@ -97,7 +97,7 @@ echo '<pre>';
 var_dump($squares);
 echo '</pre>';
 
-// Calculer la somme des éléments
+// 21-Calculer la somme des éléments
 $sum = array_reduce($numbers, fn($carry, $item) => $carry + $item);
 echo $sum . '<br>';
 
