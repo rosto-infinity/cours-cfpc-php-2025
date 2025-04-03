@@ -74,7 +74,7 @@ echo str_pad($invoiceNumber2, 8, '0', STR_PAD_LEFT) . '<br>';
 // 19-Répéter une chaîne plusieurs fois
 echo str_repeat('Hello', 2) . '<br>';
 
-// 5. Texte multi-lignes et gestion des sauts de ligne
+// 5. 20-Texte multi-lignes et gestion des sauts de ligne
 $longText = "
   Hello, my name is eva
   I am 27,
