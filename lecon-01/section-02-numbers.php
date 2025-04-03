@@ -52,7 +52,7 @@ floatval($strNumber);
 var_dump($number);
 echo '<br>';
 
-// 8. 02-Fonctions mathématiques
+// 8. 08-Fonctions mathématiques
 echo "abs(-15) : " . abs(-15) . '<br>';
 echo "pow(2, 3) : " . pow(2, 3) . '<br>';
 echo "sqrt(16) : " . sqrt(16) . '<br>';
