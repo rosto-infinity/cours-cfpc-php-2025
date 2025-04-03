@@ -45,7 +45,7 @@ echo "<pre>";
 $person['name'] ??= 'Anonymous';
 echo "Person name: " . $person['name'] . '<br>';
 
-// Switch statement avec mise à jour des rôles
+// 6-Switch statement avec mise à jour des rôles
 $userRole = 'editor'; // Valeurs possibles: 'admin', 'editor', 'user'
 switch ($userRole) {
     case 'admin':
