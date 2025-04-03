@@ -134,7 +134,7 @@ echo '<pre>';
 var_dump(array_values($person));
 echo '</pre>';
 
-// Tri du tableau associatif par clé
+// 30-Tri du tableau associatif par clé
 ksort($person);
 echo '<pre>';
 var_dump($person);
