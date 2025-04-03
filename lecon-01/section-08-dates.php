@@ -20,7 +20,7 @@ echo "Timestamp ('now') : " . strtotime('now') . '<br>';
 echo "Timestamp ('+1 day') : " . strtotime('+1 day') . '<br>';
 echo "Timestamp ('+1 week') : " . strtotime('+1 week') . '<br>';
 
-// 6. Analyse d'une date avec date_parse()
+// 06. Analyse d'une date avec date_parse()
 // Exemple avec une date mise à jour pour 2024
 $dateString = '2024-02-06 12:45:35';
 $parsedDate = date_parse($dateString);
