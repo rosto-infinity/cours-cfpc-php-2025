@@ -76,13 +76,13 @@ var_dump(array_merge($fruits, $vegetables));
 var_dump([...$fruits, ...$vegetables]); // Utilisation de l'opérateur spread (depuis PHP 7.4)
 echo '</pre>';
 
-// Tri du tableau (ordre croissant)
+// 17-Tri du tableau (ordre croissant)
 sort($fruits);
 echo '<pre>';
 var_dump($fruits);
 echo '</pre>';
 
-// Utilisation des fonctions filter, map et reduce
+// 18-Utilisation des fonctions filter, map et reduce
 $numbers = [1, 2, 3, 4, 5, 6, 7, 8];
 
 // Filtrer les nombres pairs
