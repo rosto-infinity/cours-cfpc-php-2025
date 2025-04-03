@@ -83,7 +83,7 @@ $longText = "
 echo $longText . '<br>';
 echo nl2br($longText) . '<br>';
 
-// 6. Texte multi-lignes avec balises HTML
+// 6. 21-Texte multi-lignes avec balises HTML
 $longText = "
   Hello, my name is <b>Zura</b>
   I am <b>27</b>,
