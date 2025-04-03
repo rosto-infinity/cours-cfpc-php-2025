@@ -23,7 +23,7 @@ echo $fruits[1] . '<br>';
 // 5-Modification d'un élément par index
 $fruits[0] = "Peach";
 
-// Vérification de l'existence d'un élément à l'index 2
+// 6-Vérification de l'existence d'un élément à l'index 2
 echo '<pre>';
 var_dump(isset($fruits[3]));
 echo '</pre>';
