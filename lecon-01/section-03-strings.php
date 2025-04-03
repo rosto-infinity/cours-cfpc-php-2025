@@ -32,7 +32,7 @@ echo "4 - Sans espaces à droite : '" . rtrim($string) . "'<br>";
 // 02-Comptage des mots
 echo "5 - Nombre de mots : " . str_word_count($string) . '<br>';
 
-// Renversement de la chaîne
+// 6-Renversement de la chaîne
 echo "6 - Inversée : " . strrev($string) . '<br>';
 
 // Conversion en majuscules et minuscules
