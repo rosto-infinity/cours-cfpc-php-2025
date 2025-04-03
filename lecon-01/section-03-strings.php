@@ -14,7 +14,7 @@ echo $string2 . '<br>';
 echo "Hello " . "World" . '<br>';
 // Vous pouvez concaténer plusieurs chaînes en utilisant l'opérateur "."
 
-// 3. Fonctions sur les chaînes
+// 3. 03Fonctions sur les chaînes
 $string = "Hello World     ";
 
 // Affichage de la longueur de la chaîne (espaces inclus)
