@@ -8,7 +8,7 @@
 // 1-Création d'un tableau de fruits (nouvelles valeurs)
 $fruits = ["Mango", "Strawberry", "Blueberry"];
 
-// Affichage complet du tableau
+// 2-Affichage complet du tableau
 echo '<pre>';
 var_dump($fruits);
 echo '</pre>';
