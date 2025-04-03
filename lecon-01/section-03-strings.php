@@ -39,7 +39,7 @@ echo "6 - Inversée : " . strrev($string) . '<br>';
 echo "7 - En majuscules : " . strtoupper($string) . '<br>';
 echo "8 - En minuscules : " . strtolower($string) . '<br>';
 
-// Mise en majuscule du premier caractère
+// 9-Mise en majuscule du premier caractère
 echo "9 - ucfirst('hello fff') : " . ucfirst('hello') . '<br>';
 
 // Mise en minuscule du premier caractère
