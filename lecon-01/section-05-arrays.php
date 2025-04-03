@@ -56,7 +56,7 @@ echo '</pre>';
 // 12-Affichage du tableau avec print_r
 print_r($fruits);
 
-// Combinaison des éléments du tableau en une chaîne
+// 13-Combinaison des éléments du tableau en une chaîne
 echo implode(",", $fruits) . '<br>';
 
 // Vérification de l'existence d'un élément dans le tableau
