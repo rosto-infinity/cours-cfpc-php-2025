@@ -28,7 +28,7 @@ foreach ($fruits as $fruit) {
     echo "Fruit : $fruit<br>";
 }
 
-// Boucle foreach sur tableau associatif
+// 06-Boucle foreach sur tableau associatif
 $personDetails = [
     'firstName'  => 'Owen',
     'lastName'   => 'Eva',
