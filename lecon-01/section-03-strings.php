@@ -2,7 +2,7 @@
 
 // Leçon : Chaînes de caractères et fonctions associées en PHP 8.x
 
-// 1. Création d'une chaîne simple avec extraction de variable
+// 1. 01Création d'une chaîne simple avec extraction de variable
 $author = "Owen";
 $string = "Hello $author";         // Utilisation de l'interpolation (double quotes)
 $string2 = 'Hello ' . $author;       // Utilisation de la concaténation (simple quotes)
