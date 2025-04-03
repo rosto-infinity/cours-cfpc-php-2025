@@ -1,6 +1,6 @@
 <?php
 // Mise à jour 2024-2025 : Gestion des dates en PHP
-// Définir explicitement le fuseau horaire (exemple pour Owen et Eva)
+// 1-Définir explicitement le fuseau horaire (exemple pour Owen et Eva)
 date_default_timezone_set('Europe/Paris');
 
 // 1. Afficher le timestamp actuel
