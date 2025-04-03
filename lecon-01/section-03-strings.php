@@ -35,7 +35,7 @@ echo "5 - Nombre de mots : " . str_word_count($string) . '<br>';
 // 6-Renversement de la chaîne
 echo "6 - Inversée : " . strrev($string) . '<br>';
 
-// Conversion en majuscules et minuscules
+// 7-Conversion en majuscules et minuscules
 echo "7 - En majuscules : " . strtoupper($string) . '<br>';
 echo "8 - En minuscules : " . strtolower($string) . '<br>';
 
