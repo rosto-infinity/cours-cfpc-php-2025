@@ -129,7 +129,7 @@ echo '<pre>';
 var_dump(array_keys($person));
 echo '</pre>';
 
-// Affichage des valeurs du tableau
+// 29-Affichage des valeurs du tableau
 echo '<pre>';
 var_dump(array_values($person));
 echo '</pre>';
