@@ -17,7 +17,7 @@ echo "Hello " . "World" . '<br>';
 // 3. 03Fonctions sur les chaînes
 $string = "Hello World     ";
 
-// Affichage de la longueur de la chaîne (espaces inclus)
+// 02Affichage de la longueur de la chaîne (espaces inclus)
 echo "1 - Longueur : " . strlen($string) . '<br>';
 
 // Suppression des espaces en début et fin de chaîne
