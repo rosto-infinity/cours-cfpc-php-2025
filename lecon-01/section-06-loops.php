@@ -22,7 +22,7 @@ for ($i = 0; $i < 5; $i++) {
     echo "For loop counter: $i<br>";
 }
 
-// Boucle foreach sur tableau indexé
+// 05-Boucle foreach sur tableau indexé
 $fruits = ["🍍", "🍌", "🌸", "🍎"];
 foreach ($fruits as $fruit) {
     echo "Fruit : $fruit<br>";
