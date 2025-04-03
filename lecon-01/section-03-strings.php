@@ -54,7 +54,7 @@ echo "12 - strpos (sensible à la casse) : " . strpos($string, 'World') . '<br>'
 // 013-Recherche de la position d'une sous-chaîne (insensible à la casse)
 echo "13 - stripos (insensible à la casse) : " . stripos($string, 'world') . '<br>';
 
-// Extraction d'une partie de la chaîne à partir d'un index
+// 23-Extraction d'une partie de la chaîne à partir d'un index
 echo "14 - Substr à partir de l'index 8 : " . substr($string, 8) . '<br>';
 
 // Remplacement d'une sous-chaîne (sensible à la casse)
