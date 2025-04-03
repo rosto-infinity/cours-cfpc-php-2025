@@ -10,11 +10,11 @@ $salary = 450000;
 echo $age < 22 ? 'Young' : 'Old'; // Affiche "Old" car 25 n'est pas inférieur à 22
 echo '<br>';
 
-// Opérateur ternaire imbriqué
+// 2-Opérateur ternaire imbriqué
 echo $age < 22 ? ($age < 16 ? 'Too young' : 'Young') : 'Old';
 echo '<br>';
 
-// Opérateur ternaire court (Null coalescing pour la vérification de variable)
+// 3-Opérateur ternaire court (Null coalescing pour la vérification de variable)
 $myAge = $age ? : 18; // Si $age est évalué à false, 18 est assigné
 echo "myAge = $myAge<br>";
 
