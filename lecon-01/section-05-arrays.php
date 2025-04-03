@@ -69,7 +69,7 @@ echo '<pre>';
 var_dump(array_search("Peach", $fruits));
 echo '</pre>';
 
-// Fusion de deux tableaux
+// 16-Fusion de deux tableaux
 $vegetables = ["Potato", "Cucumber"];
 echo '<pre>';
 var_dump(array_merge($fruits, $vegetables));
