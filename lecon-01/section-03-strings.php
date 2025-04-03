@@ -29,7 +29,7 @@ echo "3 - Sans espaces à gauche : '" . ltrim($string) . "'<br>";
 // 02-Suppression des espaces à droite
 echo "4 - Sans espaces à droite : '" . rtrim($string) . "'<br>";
 
-// Comptage des mots
+// 02-Comptage des mots
 echo "5 - Nombre de mots : " . str_word_count($string) . '<br>';
 
 // Renversement de la chaîne
