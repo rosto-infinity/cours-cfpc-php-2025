@@ -48,10 +48,10 @@ echo "10 - lcfirst('HELLO') : " . lcfirst('HELLO') . '<br>';
 // 11-Mise en majuscule de la première lettre de chaque mot
 echo "11 - ucwords('hello world') : " . ucwords('hello world') . '<br>';
 
-// Recherche de la position d'une sous-chaîne (sensible à la casse)
+// 12-Recherche de la position d'une sous-chaîne (sensible à la casse)
 echo "12 - strpos (sensible à la casse) : " . strpos($string, 'World') . '<br>';
 
-// Recherche de la position d'une sous-chaîne (insensible à la casse)
+// 13-Recherche de la position d'une sous-chaîne (insensible à la casse)
 echo "13 - stripos (insensible à la casse) : " . stripos($string, 'world') . '<br>';
 
 // Extraction d'une partie de la chaîne à partir d'un index
