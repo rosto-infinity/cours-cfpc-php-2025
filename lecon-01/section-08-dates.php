@@ -3,7 +3,7 @@
 // 1-Définir explicitement le fuseau horaire (exemple pour Owen et Eva)
 date_default_timezone_set('Europe/Paris');
 
-// 1. Afficher le timestamp actuel
+// 01. Afficher le timestamp actuel
 echo "Timestamp actuel : " . time() . '<br>';
 
 // 2. Afficher la date actuelle
