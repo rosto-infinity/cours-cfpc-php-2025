@@ -20,7 +20,7 @@ $string = "Hello World     ";
 // 02Affichage de la longueur de la chaîne (espaces inclus)
 echo "1 - Longueur : " . strlen($string) . '<br>';
 
-// Suppression des espaces en début et fin de chaîne
+// 02Suppression des espaces en début et fin de chaîne
 echo "2 - Sans espaces : '" . trim($string) . "'<br>";
 
 // Suppression des espaces à gauche
