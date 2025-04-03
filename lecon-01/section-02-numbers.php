@@ -66,7 +66,7 @@ echo "ceil(2.4) : " . ceil(2.4) . '<br>';
 // 9. 09-Formatage des nombres
 $nombre = 123456789.12345;
 
-// Utilisation des arguments nommés (une nouveauté de PHP 8.x) pour une meilleure lisibilité
+// 11-Utilisation des arguments nommés (une nouveauté de PHP 8.x) pour une meilleure lisibilité
 $nombre = 1234.56;
 echo number_format(
     num: $nombre,
