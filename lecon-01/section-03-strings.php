@@ -60,7 +60,7 @@ echo "14 - Substr à partir de l'index 8 : " . substr($string, 8) . '<br>';
 // 15-Remplacement d'une sous-chaîne (sensible à la casse)
 echo "15 - Remplacement (World => PHP) : " . str_replace('World', 'PHP', $string) . '<br>';
 
-// Remplacement d'une sous-chaîne (insensible à la casse)
+// 16Remplacement d'une sous-chaîne (insensible à la casse)
 echo "16 - Remplacement insensible (world => PHP) : " . str_ireplace('world', 'PHP', $string) . '<br>';
 
 // 4. Fonctions avancées sur les chaînes
