@@ -18,7 +18,7 @@ echo '<br>';
 $myAge = $age ? : 18; // Si $age est évalué à false, 18 est assigné
 echo "myAge = $myAge<br>";
 
-// Opérateur de fusion null
+// 4-Opérateur de fusion null
 $name = null;
 $displayName = $name ?? 25888;
 echo "Name:------ " . $displayName . '<br>';
