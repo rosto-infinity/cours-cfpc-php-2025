@@ -124,7 +124,7 @@ echo '<pre>';
 var_dump(isset($person['location']));
 echo '</pre>';
 
-// Affichage des clés du tableau
+// 27-Affichage des clés du tableau
 echo '<pre>';
 var_dump(array_keys($person));
 echo '</pre>';
