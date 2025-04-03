@@ -3,7 +3,7 @@
 // 2. Boucles
 // ===================================================
 
-// Boucle while
+// 02-1Boucle while
 $counter = 0;
 while ($counter < 5) {
     echo "While loop counter: $counter<br>";
