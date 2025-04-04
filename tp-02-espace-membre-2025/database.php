@@ -6,7 +6,7 @@ $options = [];
 
 try {
   $pdo= new PDO($dsn, $username, $password, $options);
-  //options
+  //3-/options
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
 die("erreur". $e->getMessage());
