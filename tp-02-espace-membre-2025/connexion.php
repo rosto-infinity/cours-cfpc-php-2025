@@ -37,36 +37,29 @@
             return 'Mauvais mot de passe';
         }
 
-        //04-Définition des variables de session
+        //04-Définition des variables de session et stocker les informations de l'utilisateur
         $_SESSION['id']     = $userinfo['id'];
         $_SESSION['pseudo'] = $userinfo['pseudo'];
         $_SESSION['mail']   = $userinfo['mail'];
-          
-            // Si l'utilisateur est authentifié, on stocke les informations dans la session
-            $_SESSION['role'] = $userinfo['role'];
-            $_SESSION['auth'] = $userinfo;
 
-            // Redirection selon le rôle de l'utilisateur
-            switch ($userinfo['role']) {
-                case 'admin':
-                    header("Location: admindofjjzeee/admindofjjzeee-dashboard.php");
-                    break;
-                default:
-                    // redirect(" profil.php?id=" . $_SESSION['id']);
-                    header("Location: profil.php?id=" . $_SESSION['id']);
-                   
-                    break;
-            }
+//02-S i l'utilisateur est authentifié, on  enregistre son rôle dans la session
+      $_SESSION['role'] = $userinfo['role'];
+      $_SESSION['auth'] = $userinfo;
 
-        //05-Redirection vers la page dedition
-        // header("Location: profil.php?id=" . $_SESSION['id']);
-        // exit();
-
-      
-       
-
-       
+      //Redirection selon le rôle de l'utilisateur
+      switch ($_SESSION['role']) {
+          case 'admin':
+              header("Location: admindofjjzeee/admindofjjzeee-dashboard.php");
+             break;
+          case 'user':
+              header("Location: profil.php?id=" . $_SESSION['id']);
+              break;
+          default:
+              return "Rôle inconnu";
     }
+
+}
+
     $erreur = handlePostRequest($pdo);
 ?>
 <!DOCTYPE html>

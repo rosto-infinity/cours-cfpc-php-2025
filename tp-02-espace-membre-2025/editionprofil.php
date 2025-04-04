@@ -157,7 +157,7 @@
             class="w-full px-4 py-2 border border-green-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500">
         </div>
         <div>
-          <label for="newmdp1" class="block text-green-700 font-medium">Mot de passe :</label>
+          <label for="newmdp1" class="block bg- text-green-700 font-medium">Mot de passe :</label>
           <input type="password" id="newmdp1" name="newmdp1" placeholder="Mot de passe"
             class="w-full px-4 py-2 border border-green-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500">
         </div>
