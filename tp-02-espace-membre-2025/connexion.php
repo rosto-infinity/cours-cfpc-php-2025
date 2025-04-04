@@ -46,7 +46,7 @@
       $_SESSION['role'] = $userinfo['role'];
       $_SESSION['auth'] = $userinfo;
 
-      //Redirection selon le rôle de l'utilisateur
+      //2-Redirection selon le rôle de l'utilisateur
       switch ($_SESSION['role']) {
           case 'admin':
               header("Location: admindofjjzeee/admindofjjzeee-dashboard.php");
